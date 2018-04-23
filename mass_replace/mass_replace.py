@@ -49,6 +49,9 @@ def many_find_replace(filename, text_search_replace_dicts):
 
 
 def discover_filetypes(root_folder=None, hard_copy=True):
+    """Walks through the specified `root_folder` and collects all file
+    extension types.
+    Writes the extension types to `file_exts.txt`."""
     if not root_folder:
         try:
             root_folder = load_config('config.yaml')['root_folder']
@@ -99,7 +102,7 @@ def mass_replace(root_folder=None, config=None, verbose=False):
 
 if __name__ == '__main__':
     print(__doc__)
+    print('discover_filetypes()\n', discover_filetypes.__doc__)
     pp(discover_filetypes(hard_copy=True))
-    # file_find_replace('lorem.txt', 'Lorem', 'REPLACED')
-    # print('\tMASS_REPLACE')
-    # mass_replace(verbose=True)
+    print('mass_replace()\n', mass_replace.__doc__)
+    mass_replace(verbose=True)
