@@ -73,7 +73,7 @@ def mass_replace(root_folder=None, config=None, verbose=False):
         config = load_config('config.yaml')
     if not root_folder:
         root_folder = config['root_folder']
-    print(f'ROOT: {root_folder}')
+    print('ROOT: {}'.format('root_folder'))
     replacement_pairs = config['replacement_pairs']
     for i in replacement_pairs.items():
         print(i)
@@ -82,17 +82,18 @@ def mass_replace(root_folder=None, config=None, verbose=False):
         valid_files = [f for f in filenames if f.split('.')[-1]
                        in config['filetypes']]
         if verbose:
-            print(f'\tCurrent Path - STEP:{counter}')
+            print('\tCurrent Path - STEP:{}'.format(counter))
             pp(dirpath)
-            print(f'\tDirectories - STEP:{counter}')
+            print('\tDirectories - STEP:{}'.format(counter))
             pp(dirnames)
-            print(f'\tFiles: - STEP:{counter}')
+            print('\tFiles: - STEP:{}'.format(counter))
             pp(filenames)
             print()
         counter += 1
         for fname in valid_files:
-            print(f'|----{fname}')
-            many_find_replace(f'{dirpath}\\{fname}', replacement_pairs)
+            print('|----{}'.format(fname))
+            many_find_replace('{}\\{}'.format(dirpath, fname),
+                              replacement_pairs)
     return
 
 
@@ -102,4 +103,3 @@ if __name__ == '__main__':
     # file_find_replace('lorem.txt', 'Lorem', 'REPLACED')
     # print('\tMASS_REPLACE')
     # mass_replace(verbose=True)
-
