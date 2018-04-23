@@ -85,6 +85,7 @@ def mass_replace(root_folder=None, config=None, verbose=False):
         valid_files = [f for f in filenames if f.split('.')[-1]
                        in config['filetypes']]
         if verbose:
+            print('=' * 79)
             print('\tCurrent Path - STEP:{}'.format(counter))
             pp(dirpath)
             print('\tDirectories - STEP:{}'.format(counter))
@@ -102,7 +103,9 @@ def mass_replace(root_folder=None, config=None, verbose=False):
 
 if __name__ == '__main__':
     print(__doc__)
+    print('*' * 79)
     print('discover_filetypes()\n', discover_filetypes.__doc__)
     pp(discover_filetypes(hard_copy=True))
+    print('*' * 79)
     print('mass_replace()\n', mass_replace.__doc__)
     mass_replace(verbose=True)
