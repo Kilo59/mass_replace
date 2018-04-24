@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 """
 mass_replace.py
 ~~~~~~~~~~~~~~~
@@ -10,10 +11,9 @@ from pprint import pprint as pp
 
 
 def resolve_wd(target_dir='mass_replace'):
-    try:
+    if target_dir in get_dirs():
         os.chdir(target_dir)
-    except Exception as E:
-        print(E)
+        resolve_wd(target_dir=target_dir)
 
 
 def load_config(filename='config.yaml'):
