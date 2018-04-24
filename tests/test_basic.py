@@ -17,6 +17,12 @@ except ImportError:
 PYTHON_VER = version_info[0]
 
 
+def read_file_lines(filename):
+    """Reads the lines of a file as a list"""
+    with open(filename, mode='r') as f_in:
+        return f_in.readlines()
+
+
 def test_mass_replace_import():
     assert isinstance(mr.__doc__, str)
     print(type(mr))
@@ -55,6 +61,17 @@ def test_get_files():
     assert type(files) is list
     for f in files:
         assert path.isfile(f)
+
+
+def test_simple_file_find_and_replace():
+    """Replace text in the lorem.txt file and undo it."""
+    filename = 'mass_replace/lorem.txt'
+    mr.file_find_replace(filename, 'Lorem', 'REPLACED')
+    first_str = read_file_lines(filename)[0].split(' ')[0]
+    assert first_str == 'REPLACED'
+    mr.file_find_replace(filename, 'REPLACED', 'Lorem')
+    first_str = read_file_lines(filename)[0].split(' ')[0]
+    assert first_str == 'Lorem'
 
 
 if __name__ == '__main__':
