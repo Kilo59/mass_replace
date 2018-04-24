@@ -74,6 +74,23 @@ def test_simple_file_find_and_replace():
     assert first_str == 'Lorem'
 
 
+def test_basic_mass_replace():
+    config_dict = {'filetypes': ['txt', 'csv'],
+                   'replacement_pairs': {'a': 'z'}}
+    mr.mass_replace('tests/docs', config=config_dict)
+    txt_1st_str = read_file_lines('tests/docs/abc.txt')[0][0]
+    csv_1st_str = read_file_lines('tests/docs/abc.csv')[0][0]
+    assert txt_1st_str == config_dict['replacement_pairs']['a']
+    assert csv_1st_str == config_dict['replacement_pairs']['a']
+    # reset files
+    config_dict['replacement_pairs'] = {'z': 'a'}
+    mr.mass_replace('tests/docs', config=config_dict)
+    txt_1st_str = read_file_lines('tests/docs/abc.txt')[0][0]
+    csv_1st_str = read_file_lines('tests/docs/abc.csv')[0][0]
+    assert txt_1st_str == config_dict['replacement_pairs']['z']
+    assert csv_1st_str == config_dict['replacement_pairs']['z']
+
+
 if __name__ == '__main__':
     print('Python: {}.{}'.format(version_info[0], version_info[1]))
     print(__doc__)
