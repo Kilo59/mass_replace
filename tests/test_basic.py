@@ -74,6 +74,12 @@ def test_simple_file_find_and_replace():
     assert first_str == 'Lorem'
 
 
+def test_discover_filetypes():
+    filetypes = mr.discover_filetypes('tests')
+    assert type(filetypes) is set
+    assert len(filetypes) > 1
+
+
 def test_basic_mass_replace():
     test_dir = '{}/tests'.format(getcwd())
     config_dict = {'filetypes': ['txt', 'csv'],
