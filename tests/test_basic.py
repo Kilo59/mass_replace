@@ -78,7 +78,9 @@ def test_basic_mass_replace():
     test_dir = '{}/tests'.format(getcwd())
     config_dict = {'filetypes': ['txt', 'csv'],
                    'replacement_pairs': {'a': 'z'}}
-    mr.mass_replace('{}/docs'.format(test_dir), config=config_dict)
+    mr.mass_replace('{}/docs'.format(test_dir),
+                    config=config_dict,
+                    verbose=True)
     txt_1st_str = read_file_lines('{}/docs/abc.txt'.format(test_dir))[0][0]
     csv_1st_str = read_file_lines('{}/docs/abc.csv'.format(test_dir))[0][0]
     assert txt_1st_str == config_dict['replacement_pairs']['a']
