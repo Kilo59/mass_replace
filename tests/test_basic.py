@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 """
 tests_basic.py
 ~~~~~~~~~~~~~~
@@ -5,14 +6,15 @@ Basic unit tests for `mass_replace` python module written using pytest.
 """
 from sys import version_info
 from os import path
+# from os import chdir
 import pytest
 try:
     import mass_replace as mr
 except ImportError:
-    print('`mass_replace` not imported')
+    from context import mass_replace as mr
+
 
 PYTHON_VER = version_info[0]
-mr.resolve_wd('mass_replace')
 
 
 def test_mass_replace_import():
@@ -27,7 +29,7 @@ def test_correct_working_dir():
 @pytest.mark.skipif(PYTHON_VER <= 2,
                     reason="List comprehension error with Python 2")
 def test_load_config():
-    load_config_return_type = type(mr.load_config())
+    load_config_return_type = type(mr.load_config('mass_replace/config.yaml'))
     print(load_config_return_type, dict)
     assert load_config_return_type is dict
 
