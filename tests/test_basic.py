@@ -5,7 +5,7 @@ tests_basic.py
 Basic unit tests for `mass_replace` python module written using pytest.
 """
 from sys import version_info
-from os import path
+from os import path, getcwd
 # from os import chdir
 import pytest
 try:
@@ -75,18 +75,19 @@ def test_simple_file_find_and_replace():
 
 
 def test_basic_mass_replace():
+    test_dir = '{}\\tests'.format(getcwd())
     config_dict = {'filetypes': ['txt', 'csv'],
                    'replacement_pairs': {'a': 'z'}}
-    mr.mass_replace('tests\\docs', config=config_dict)
-    txt_1st_str = read_file_lines('tests\\docs\\abc.txt')[0][0]
-    csv_1st_str = read_file_lines('tests\\docs\\abc.csv')[0][0]
+    mr.mass_replace('{}\\docs'.format(test_dir), config=config_dict)
+    txt_1st_str = read_file_lines('{}\\docs\\abc.txt'.format(test_dir))[0][0]
+    csv_1st_str = read_file_lines('{}\\docs\\abc.csv'.format(test_dir))[0][0]
     assert txt_1st_str == config_dict['replacement_pairs']['a']
     assert csv_1st_str == config_dict['replacement_pairs']['a']
     # reset files
     config_dict['replacement_pairs'] = {'z': 'a'}
-    mr.mass_replace('tests\\docs', config=config_dict)
-    txt_1st_str = read_file_lines('tests\\docs\\abc.txt')[0][0]
-    csv_1st_str = read_file_lines('tests\\docs\\abc.csv')[0][0]
+    mr.mass_replace('{}\\docs'.format(test_dir), config=config_dict)
+    txt_1st_str = read_file_lines('{}\\docs\\abc.txt'.format(test_dir))[0][0]
+    csv_1st_str = read_file_lines('{}\\docs\\abc.csv'.format(test_dir))[0][0]
     assert txt_1st_str == config_dict['replacement_pairs']['z']
     assert csv_1st_str == config_dict['replacement_pairs']['z']
 
