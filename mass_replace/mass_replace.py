@@ -59,7 +59,7 @@ def discover_filetypes(root_folder=None, hard_copy=True):
                 raise(FileNotFoundError)
         except FileNotFoundError:
             root_folder = os.getcwd()
-    file_types = set() 
+    file_types = set()
     for _, _, filenames in os.walk(root_folder):
         f_types = ['.{}'.format(ext.split('.')[-1]) for ext in filenames]
         file_types.update(f_types)
@@ -96,7 +96,7 @@ def mass_replace(root_folder=None, config=None, verbose=False):
         counter += 1
         for fname in valid_files:
             print('|----{}'.format(fname))
-            many_find_replace('{}\\{}'.format(dirpath, fname),
+            many_find_replace('{}/{}'.format(dirpath, fname),
                               replacement_pairs)
     return
 
