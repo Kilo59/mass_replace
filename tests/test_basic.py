@@ -65,7 +65,7 @@ def test_get_files():
 
 def test_simple_file_find_and_replace():
     """Replace text in the lorem.txt file and undo it."""
-    filename = 'mass_replace/lorem.txt'
+    filename = 'mass_replace/docs/lorem.txt'
     mr.file_find_replace(filename, 'Lorem', 'REPLACED')
     first_str = read_file_lines(filename)[0].split(' ')[0]
     assert first_str == 'REPLACED'
