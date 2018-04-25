@@ -75,6 +75,7 @@ def test_simple_file_find_and_replace():
 
 
 def test_discover_filetypes():
+    mr.discover_filetypes()
     filetypes = mr.discover_filetypes('tests')
     assert type(filetypes) is set
     assert len(filetypes) > 1
