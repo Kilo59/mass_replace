@@ -8,7 +8,11 @@ from sys import version_info
 from os import path, getcwd
 # from os import chdir
 import pytest
-import mass_replace as mr
+try:
+    import mass_replace as mr
+except ImportError as E:
+    print(E)
+    from context import mass_replace as mr
 
 
 PYTHON_VER = version_info[0]
@@ -20,9 +24,8 @@ def read_file_lines(filename):
         return f_in.readlines()
 
 
-# def test_mass_replace_import():
-#     assert type(mr.__doc__) is str
-#     print(type(mr))
+def test_mass_replace_import():
+    assert mr
 
 
 def test_correct_working_dir():
