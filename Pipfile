@@ -7,10 +7,12 @@ name = "pypi"
 pyyaml = ">=3.13"
 
 [dev-packages]
-black = {version = "==18.9b0", markers = "python_version >= '3.6'"}
+flit = "*"
+black = {version = "==18.9b0",markers = "python_version >= '3.6'"}
 flake8 = "*"
 pytest = "*"
-flit = "*"
+pytest-cov = "*"
+coveralls = "*"
 
 [requires]
 python_version = "3.7"
