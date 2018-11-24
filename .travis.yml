@@ -8,7 +8,8 @@ python:
   - "3.6"
 # command to install dependencies
 install:
-  - pip install -r requirements.txt
+  - pip install pipenv
+  - pipenv install --dev
 # command to run tests
 script:
   - pwd
