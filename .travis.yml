@@ -9,7 +9,7 @@ python:
 # command to install dependencies
 install:
   - pip install pipenv
-  - pipenv install --dev
+  - pipenv install --dev --deploy
 # command to run tests
 script:
   - pwd
