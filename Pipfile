@@ -7,19 +7,16 @@ name = "pypi"
 pyyaml = ">=3.13"
 
 [dev-packages]
-flit = "*"
 black = {version = "==18.9b0",markers = "python_version >= '3.6'"}
 pytest = "*"
 pytest-cov = "*"
 coveralls = "*"
-prospector = "*"
-# latest flake8 causing problems
-flake8 = "==3.5.0"
-wily = {version = "*", markers =  "python_version >= '3.7'"}
+prospector = {extras = ["with_pyroma"],version = "*"}
+# wily = {version = "*",markers = "python_version >= '3.7'"}
 
 [requires]
 python_version = "3.7"
 
 [scripts]
-format = "black mass_replace tests"
+format = "black ."
 reqs = "sh scripts/update_reqs.sh"
