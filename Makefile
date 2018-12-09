@@ -9,7 +9,7 @@ else
 endif
 
 test:
-	py.test -rfs --cov=mass_replace --cov-report term-missing
+	py.test -rpsf --cov=mass_replace --cov-report term-missing
 
 lint:
 ifeq ($(TRAVIS_PYTHON_VERSION), 2.7)
