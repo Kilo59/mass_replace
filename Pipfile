@@ -22,3 +22,4 @@ python_version = "3.7"
 [scripts]
 format = "black ."
 reqs = "sh scripts/update_reqs.sh"
+pre = "pre-commit run --all-files"

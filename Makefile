@@ -3,7 +3,7 @@ ifeq ($(TRAVIS), true)
 		pip install pipenv
 		pipenv install --dev
 		pip install .
-else	
+else
 		pipenv install --dev
 		pre-commit install
 endif

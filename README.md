@@ -12,11 +12,11 @@ branch|Travis CI|Coveralls
 `mass_replace` "Walkthrough" through a specified `root_folder` and perform find and replace operations on every file of the specified type.
 
 * If `Python 3` is installed on your system it can be run as `mass_replace.py` Python script
-* Can be run as a standalone Window Executable (`.exe`) 
+* Can be run as a standalone Window Executable (`.exe`)
 
 --------------------------------------------
 
-## ⚠️ **WARNING** ⚠️ 
+## ⚠️ **WARNING** ⚠️
 EVERY FILE OF THE SPECIFIED TYPE NESTED UNDERNEATH THE `root_folder` WILL BE SUBJECT TO FIND AND REPLACE OPERATIONS
 
 ------------------------------------------------
@@ -34,7 +34,7 @@ EVERY FILE OF THE SPECIFIED TYPE NESTED UNDERNEATH THE `root_folder` WILL BE SUB
     - set 'root_folder' to set the parent folder under which the operations will be performed.
 4. Run `mass_replace.exe`
      - Double click `mass_replace.exe`
-     - or run from command line/powershell ✔️ 
+     - or run from command line/powershell ✔️
 
 ```yaml
 # mass_replace config file
@@ -46,7 +46,7 @@ filetypes:
 replacement_pairs:
   old_text1: new_text1
   old_text2: new_text2
-  puff_daddy: diddy 
+  puff_daddy: diddy
 ```
 
 ### Ease of Use suggestions
@@ -56,4 +56,3 @@ Create shortcuts of `mass_replace.exe` and `config.yaml` and place them somewher
 Do not move the actual files or the application will not work.
 
 ![image](https://user-images.githubusercontent.com/13108583/39159212-5f284ca0-4732-11e8-8014-dbedd0f349c0.png)
-
