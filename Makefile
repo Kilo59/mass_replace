@@ -15,7 +15,7 @@ lint:
 ifeq ($(TRAVIS_PYTHON_VERSION), 2.7)
 		echo "Skip linting for Python2.7"
 else
-		prospector --output-format grouped
+		prospector --output-format grouped --with-tool pyroma --strictness medium
 endif
 
 format:

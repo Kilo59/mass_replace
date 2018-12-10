@@ -15,6 +15,7 @@ coveralls = "*"
 prospector = {extras = ["with_pyroma"],version = "*"}
 # wily = {version = "*",markers = "python_version >= '3.7'"}
 twine = "*"
+keyring = "*"
 
 [requires]
 python_version = "3.7"
@@ -23,3 +24,4 @@ python_version = "3.7"
 format = "black ."
 reqs = "sh scripts/update_reqs.sh"
 pre = "pre-commit run --all-files"
+lint = "prospector --output-format grouped --with-tool pyroma --strictness medium"
