@@ -27,13 +27,6 @@ VERSION = "0.0.2"
 # What packages are required for this module to be executed?
 REQUIRED = ["pyaml"]
 
-# The rest you shouldn't have to touch too much :)
-# ------------------------------------------------
-# Except, perhaps the License and Trove Classifiers!
-# If you do change the License, remember to change the Trove Classifier for that!
-
-here = os.path.abspath(os.path.dirname(__file__))
-
 # Import the README and use it as the long-description.
 # The text of the README file
 README = (HERE / "README.md").read_text(encoding="utf-8")
@@ -41,7 +34,7 @@ README = (HERE / "README.md").read_text(encoding="utf-8")
 # Load the package's __version__.py module as a dictionary.
 about = {}
 if not VERSION:
-    with open(os.path.join(here, NAME, "__version__.py")) as f:
+    with open(HERE.joinpath(NAME, "__version__.py")) as f:
         exec(f.read(), about)
 else:
     about["__version__"] = VERSION
@@ -67,7 +60,7 @@ class UploadCommand(Command):
     def run(self):
         try:
             self.status("Removing previous builds…")
-            rmtree(os.path.join(here, "dist"))
+            rmtree(HERE.joinpath("dist"))
         except OSError:
             pass
 
