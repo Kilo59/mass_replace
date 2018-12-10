@@ -1,6 +1,6 @@
 # mass_replace
 
-[![PyPi](https://img.shields.io/pypi/pyversions/Django.svg)](https://pypi.org/project/mass-replace/) [![Build Status](https://travis-ci.org/Kilo59/mass_replace.svg?branch=master)](https://travis-ci.org/Kilo59/mass_replace) [![Coverage Status](https://coveralls.io/repos/github/Kilo59/mass_replace/badge.svg?branch=master)](https://coveralls.io/github/Kilo59/mass_replace?branch=master)
+[![PyPI version](https://badge.fury.io/py/mass-replace.svg)](https://badge.fury.io/py/mass-replace) [![PyPi](https://img.shields.io/pypi/pyversions/Django.svg)](https://pypi.org/project/mass-replace/) [![Build Status](https://travis-ci.org/Kilo59/mass_replace.svg?branch=master)](https://travis-ci.org/Kilo59/mass_replace) [![Coverage Status](https://coveralls.io/repos/github/Kilo59/mass_replace/badge.svg?branch=master)](https://coveralls.io/github/Kilo59/mass_replace?branch=master) [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/ambv/black)
 
 ## Use case
 
