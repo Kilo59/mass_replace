@@ -3,13 +3,14 @@ ifeq ($(TRAVIS), true)
 		pip install pipenv
 		pipenv install --dev
 		pip install .
+		touch tests/__init__.py
 else
 		pipenv install --dev
 		pre-commit install
 endif
 
 test:
-	pytest -v --cov-report term --cov-report xml --cov=mass_replace tests/
+	pytest -rpsf --cov-report term-missing --cov-report xml --cov=mass_replace tests/
 
 lint:
 ifeq ($(TRAVIS_PYTHON_VERSION), 2.7)
