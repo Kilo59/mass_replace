@@ -16,6 +16,7 @@ prospector = {extras = ["with_pyroma"],version = "*"}
 # wily = {version = "*",markers = "python_version >= '3.7'"}
 twine = "*"
 keyring = "*"
+readme-renderer = {extras = ["md"],version = "*"}
 
 [requires]
 python_version = "3.7"
