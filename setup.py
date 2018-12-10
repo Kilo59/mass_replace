@@ -36,7 +36,7 @@ here = os.path.abspath(os.path.dirname(__file__))
 
 # Import the README and use it as the long-description.
 # The text of the README file
-README = (HERE / "README.md").read_text()
+# README = (HERE / "README.md").read_text()
 
 # Load the package's __version__.py module as a dictionary.
 about = {}
@@ -89,7 +89,7 @@ setup(
     name=NAME,
     version=about["__version__"],
     description=DESCRIPTION,
-    long_description=README,
+    # long_description=README,
     author=AUTHOR,
     author_email=EMAIL,
     python_requires=REQUIRES_PYTHON,
