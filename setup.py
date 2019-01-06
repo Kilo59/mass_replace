@@ -22,7 +22,7 @@ EMAIL = "gabriel59kg@gmail.com"
 AUTHOR = "Gabriel Gore"
 REQUIRES_PYTHON = ">=3.5.0"
 # replace with __version__
-VERSION = "0.0.2"
+VERSION = "0.0.3"
 
 # What packages are required for this module to be executed?
 REQUIRED = ["pyaml"]
@@ -83,6 +83,7 @@ setup(
     version=about["__version__"],
     description=DESCRIPTION,
     long_description=README,
+    long_description_content_type="text/markdown",
     author=AUTHOR,
     author_email=EMAIL,
     python_requires=REQUIRES_PYTHON,
