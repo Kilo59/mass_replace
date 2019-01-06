@@ -1,8 +1,10 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
+import pathlib
+from setuptools import find_packages, setup
 
-# Note: To use the 'upload' functionality of this file, you must:
-#   $ pip install twine
+# The directory containing this file
+HERE = pathlib.Path(__file__).parent
 
 import os
 import sys
