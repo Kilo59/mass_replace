@@ -4,6 +4,7 @@ tests_basic.py
 ~~~~~~~~~~~~~~
 Basic unit tests for `mass_replace` python module written using pytest.
 """
+
 from sys import version_info
 from os import path, getcwd
 

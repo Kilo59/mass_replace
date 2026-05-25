@@ -3,15 +3,15 @@
 mass_replace.py
 ~~~~~~~~~~~~~~~
 
-Python Application for multiple simultaneous find and replace operations in a directory. 
+Python Application for multiple simultaneous find and replace operations in a directory.
 """
+
 import pathlib
 from sys import version_info
 import os
 import fileinput
 import yaml
 from pprint import pprint as pp
-
 
 PYTHON_VER = (version_info.major, version_info.minor)
 ROOT = pathlib.Path(__file__).joinpath("..").resolve()
